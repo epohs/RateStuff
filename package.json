@@ -9,6 +9,7 @@
     "handlebars": "^4.0",
     "hapi": "^13.2.1",
     "redis": "^0.12",
+    "shortid": "^2.2.4",
     "vision": "^4.0.1"
   },
   "description": "First site on this Pi",

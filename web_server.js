@@ -1,16 +1,34 @@
 'use strict';
 
+// Framework for making things easier
 const Hapi = require('hapi');
 
+// The server object
 const server = new Hapi.Server();
-const routes = require('./configs/routes');
 
 server.connection({ port: 4000 });
+
+// Configure the server for cookies
+server.state('data', {
+  ttl: null,
+  isSecure: false,
+  isHttpOnly: true,
+  encoding: 'base64json',
+  clearInvalid: false, // remove invalid cookies
+  strictHeader: true // don't allow violations of RFC 6265
+});
+
+
+
+// Routes are handled in an include
+const routes = require('./configs/routes');
 
 
 
 server.register(require('vision'), (err) => {
 
+
+  // Configure our templates
   server.views({
     engines: {
       hbs: require('handlebars')
