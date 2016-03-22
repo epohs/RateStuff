@@ -1,0 +1,18 @@
+{
+  "name": "hello-world",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./web_server.js"
+  },
+  "dependencies": {
+    "handlebars": "^4.0",
+    "hapi": "^13.2.1",
+    "redis": "^0.12",
+    "vision": "^4.0.1"
+  },
+  "description": "First site on this Pi",
+  "main": "web_server.js",
+  "author": "Jason Shope",
+  "license": "ISC"
+}
